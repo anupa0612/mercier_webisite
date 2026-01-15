@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop — Mercier</title>
+  <link rel="stylesheet" href="/css/styles.css"/>
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="/index.html"><span class="dot"></span> MERCIER</a>
+    <nav class="navlinks">
+      <a href="/index.html">Home</a>
+      <a href="/shop.html">Shop</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a class="pill" href="/cart.html">Cart (<span data-cart-count>0</span>)</a>
+      <a href="/orders.html">Orders</a>
+      <a href="/admin.html">Admin</a>
+    </nav>
+    <div class="navright" data-auth-slot></div>
+  </div>
+</header>
+
+<main class="container" style="padding:22px 0 0">
+  <div class="sectionTitle">
+    <h2>Shop</h2>
+    <span class="muted">Browse the collection</span>
+  </div>
+
+  <div class="split">
+    <div class="card">
+      <div class="cardBody grid">
+        <div>
+          <label class="muted small">Search</label>
+          <input class="input" id="q" placeholder="Hoodie, tee, jacket..."/>
+        </div>
+        <div>
+          <label class="muted small">Category</label>
+          <select id="cat">
+            <option value="">All</option>
+          </select>
+        </div>
+        <div>
+          <label class="muted small">Sort</label>
+          <select id="sort">
+            <option value="featured">Featured</option>
+            <option value="low">Price: Low → High</option>
+            <option value="high">Price: High → Low</option>
+            <option value="az">Name: A → Z</option>
+          </select>
+        </div>
+        <button class="btn" id="reset">Reset</button>
+      </div>
+    </div>
+
+    <div>
+      <div class="cards" id="grid"></div>
+      <div class="notice" style="margin-top:14px">
+        Tip: Click any item to choose size/color and add to cart.
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container small">© <span id="y"></span> Mercier</div>
+</footer>
+
+<script type="module" src="/js/shop.js"></script>
+</body>
+</html>

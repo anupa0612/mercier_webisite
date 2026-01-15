@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout — Mercier</title>
+  <link rel="stylesheet" href="/css/styles.css"/>
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="/index.html"><span class="dot"></span> MERCIER</a>
+    <nav class="navlinks">
+      <a href="/index.html">Home</a>
+      <a href="/shop.html">Shop</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a class="pill" href="/cart.html">Cart (<span data-cart-count>0</span>)</a>
+      <a href="/orders.html">Orders</a>
+      <a href="/admin.html">Admin</a>
+    </nav>
+    <div class="navright" data-auth-slot></div>
+  </div>
+</header>
+
+<main class="container" style="padding:22px 0 0">
+  <div class="sectionTitle">
+    <h2>Checkout</h2>
+    <span class="muted">Complete your order</span>
+  </div>
+
+  <div class="split">
+    <div class="card">
+      <div class="cardBody grid">
+        <div class="notice">
+          This demo stores orders in a local file. You can later connect Stripe/PayHere/PayPal.
+        </div>
+
+        <div class="split">
+          <div>
+            <label class="muted small">Full name</label>
+            <input class="input" id="name" placeholder="John Smith"/>
+          </div>
+          <div>
+            <label class="muted small">Email</label>
+            <input class="input" id="email" placeholder="john@email.com"/>
+          </div>
+        </div>
+
+        <div class="split">
+          <div>
+            <label class="muted small">Phone</label>
+            <input class="input" id="phone" placeholder="+94 ..."/>
+          </div>
+          <div>
+            <label class="muted small">City</label>
+            <input class="input" id="city" placeholder="Colombo"/>
+          </div>
+        </div>
+
+        <div>
+          <label class="muted small">Shipping address</label>
+          <textarea id="address" placeholder="Address line, area, postal code"></textarea>
+        </div>
+
+        <div>
+          <label class="muted small">Notes (optional)</label>
+          <input class="input" id="notes" placeholder="Size preference, delivery instructions..."/>
+        </div>
+
+        <button class="btn primary" id="place">Place Order</button>
+        <div class="notice" id="msg" style="display:none"></div>
+      </div>
+    </div>
+
+    <div class="totalBox" id="summary"></div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container small">© <span id="y"></span> Mercier</div>
+</footer>
+
+<script type="module" src="/js/checkout.js"></script>
+</body>
+</html>

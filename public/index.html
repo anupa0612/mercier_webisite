@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mercier — Premium Streetwear</title>
+  <link rel="stylesheet" href="/css/styles.css"/>
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="/index.html"><span class="dot"></span> MERCIER</a>
+
+      <nav class="navlinks">
+        <a href="/index.html">Home</a>
+        <a href="/shop.html">Shop</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+        <a class="pill" href="/cart.html">Cart (<span data-cart-count>0</span>)</a>
+        <a href="/orders.html">Orders</a>
+        <a href="/admin.html">Admin</a>
+      </nav>
+
+      <div class="navright" data-auth-slot></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="heroCard">
+        <div>
+          <span class="badge">New Season • Mercier Essentials</span>
+          <h1>Premium basics, built for daily wear.</h1>
+          <p>
+            Discover clean silhouettes, heavyweight fabrics, and modern fits. Shop the latest drops and best sellers.
+          </p>
+          <div class="actions">
+            <a class="btn primary" href="/shop.html">Shop Collection</a>
+            <a class="btn" href="/about.html">Our Story</a>
+          </div>
+
+          <div class="kpis">
+            <div class="kpi">
+              <div class="v">Free Shipping</div>
+              <div class="l">On orders over $120</div>
+            </div>
+            <div class="kpi">
+              <div class="v">Secure Checkout</div>
+              <div class="l">Order stored & tracked</div>
+            </div>
+            <div class="kpi">
+              <div class="v">Fast Support</div>
+              <div class="l">Email replies within 24h</div>
+            </div>
+            <div class="kpi">
+              <div class="v">Easy Returns</div>
+              <div class="l">14-day return window</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="heroArt" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sectionTitle">
+        <h2>Featured</h2>
+        <a class="btn link" href="/shop.html">View all →</a>
+      </div>
+      <div class="cards" id="featured"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footerGrid">
+      <div>
+        <div class="brand"><span class="dot"></span> MERCIER</div>
+        <p class="small">Modern clothing essentials. Clean fits. Premium comfort.</p>
+      </div>
+      <div>
+        <div class="muted">Company</div>
+        <div style="margin-top:10px;display:grid;gap:8px">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/orders.html">Order Tracking</a>
+        </div>
+      </div>
+      <div>
+        <div class="muted">Shop</div>
+        <div style="margin-top:10px;display:grid;gap:8px">
+          <a href="/shop.html">Shop All</a>
+          <a href="/cart.html">Cart</a>
+          <a href="/checkout.html">Checkout</a>
+        </div>
+      </div>
+    </div>
+    <div class="container small" style="margin-top:18px">
+      © <span id="y"></span> Mercier. All rights reserved.
+    </div>
+  </footer>
+
+  <script type="module">
+    import { loadProducts, money, renderAuthUI, updateCartCount } from "/js/app.js";
+
+    document.getElementById("y").textContent = new Date().getFullYear();
+    renderAuthUI(); updateCartCount();
+
+    const products = await loadProducts();
+    const featured = products.slice(0, 3);
+
+    const wrap = document.getElementById("featured");
+    wrap.innerHTML = featured.map(p => `
+      <a class="card" href="/product.html?id=${encodeURIComponent(p.id)}">
+        <div class="img" style="background-image:url('${p.image}')"></div>
+        <div class="cardBody">
+          <div class="row">
+            <div style="font-weight:800">${p.name}</div>
+            ${p.badge ? `<span class="badge">${p.badge}</span>` : ``}
+          </div>
+          <div class="row" style="margin-top:10px">
+            <div class="muted">${p.category}</div>
+            <div class="price">${money(p.price)}</div>
+          </div>
+        </div>
+      </a>
+    `).join("");
+  </script>
+</body>
+</html>

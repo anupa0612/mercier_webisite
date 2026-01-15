@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Orders — Mercier</title>
+  <link rel="stylesheet" href="/css/styles.css"/>
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="/index.html"><span class="dot"></span> MERCIER</a>
+    <nav class="navlinks">
+      <a href="/index.html">Home</a>
+      <a href="/shop.html">Shop</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a class="pill" href="/cart.html">Cart (<span data-cart-count>0</span>)</a>
+      <a href="/orders.html">Orders</a>
+      <a href="/admin.html">Admin</a>
+    </nav>
+    <div class="navright" data-auth-slot></div>
+  </div>
+</header>
+
+<main class="container" style="padding:22px 0 0">
+  <div class="sectionTitle">
+    <h2>Your Orders</h2>
+    <span class="muted">Order confirmation</span>
+  </div>
+
+  <div class="card">
+    <div class="cardBody" id="box"></div>
+  </div>
+
+  <div class="notice" style="margin-top:14px">
+    In this demo, the customer sees their last order ID on this device.
+    For full user accounts + order history, we can add a real database login.
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container small">© <span id="y"></span> Mercier</div>
+</footer>
+
+<script type="module">
+  import { renderAuthUI, updateCartCount } from "/js/app.js";
+  renderAuthUI(); updateCartCount();
+  document.getElementById("y").textContent = new Date().getFullYear();
+
+  const id = localStorage.getItem("mercier_last_order");
+  const box = document.getElementById("box");
+
+  box.innerHTML = id
+    ? `<div style="font-weight:900;font-size:18px">Thank you!</div>
+       <p class="muted">Your order has been received.</p>
+       <div class="totalBox"><div class="muted">Order ID</div><div style="font-weight:900;font-size:20px">${id}</div></div>
+       <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+         <a class="btn" href="/shop.html">Shop more</a>
+         <a class="btn" href="/contact.html">Contact support</a>
+       </div>`
+    : `<div class="notice">No recent order found on this device. Place an order from the checkout page.</div>`;
+</script>
+</body>
+</html>

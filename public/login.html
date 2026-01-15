@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login — Mercier</title>
+  <link rel="stylesheet" href="/css/styles.css"/>
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="/index.html"><span class="dot"></span> MERCIER</a>
+    <nav class="navlinks">
+      <a href="/index.html">Home</a>
+      <a href="/shop.html">Shop</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a class="pill" href="/cart.html">Cart (<span data-cart-count>0</span>)</a>
+      <a href="/orders.html">Orders</a>
+      <a href="/admin.html">Admin</a>
+    </nav>
+    <div class="navright" data-auth-slot></div>
+  </div>
+</header>
+
+<main class="container" style="padding:22px 0 0">
+  <div class="sectionTitle"><h2>Login</h2><span class="muted">Demo local login</span></div>
+  <div class="card">
+    <div class="cardBody grid" style="max-width:520px">
+      <div>
+        <label class="muted small">Email</label>
+        <input class="input" id="email" placeholder="you@email.com"/>
+      </div>
+      <div>
+        <label class="muted small">Password</label>
+        <input class="input" id="pass" type="password" placeholder="••••••••"/>
+      </div>
+      <button class="btn primary" id="login">Login</button>
+      <div class="notice" id="msg" style="display:none"></div>
+      <a class="btn link" href="/register.html">Create account →</a>
+    </div>
+  </div>
+</main>
+
+<footer class="footer"><div class="container small">© <span id="y"></span> Mercier</div></footer>
+
+<script type="module" src="/js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin — Mercier</title>
+  <link rel="stylesheet" href="/css/styles.css"/>
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="/index.html"><span class="dot"></span> MERCIER</a>
+    <nav class="navlinks">
+      <a href="/index.html">Home</a>
+      <a href="/shop.html">Shop</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a class="pill" href="/cart.html">Cart (<span data-cart-count>0</span>)</a>
+      <a href="/orders.html">Orders</a>
+      <a href="/admin.html">Admin</a>
+    </nav>
+    <div class="navright" data-auth-slot></div>
+  </div>
+</header>
+
+<main class="container" style="padding:22px 0 0">
+  <div class="sectionTitle">
+    <h2>Admin Orders</h2>
+    <span class="muted">View placed orders</span>
+  </div>
+
+  <div class="split">
+    <div class="card">
+      <div class="cardBody grid">
+        <div class="notice">
+          Admin key (demo): <b>mercier-admin-123</b><br/>
+          Change it inside <b>server/server.js</b>.
+        </div>
+        <div>
+          <label class="muted small">Admin key</label>
+          <input class="input" id="key" value="mercier-admin-123"/>
+        </div>
+        <button class="btn primary" id="load">Load Orders</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="cardBody" id="out">
+        <div class="notice">No orders loaded yet.</div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer"><div class="container small">© <span id="y"></span> Mercier</div></footer>
+<script type="module" src="/js/admin.js"></script>
+</body>
+</html>

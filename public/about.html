@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About — Mercier</title>
+  <link rel="stylesheet" href="/css/styles.css"/>
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="/index.html"><span class="dot"></span> MERCIER</a>
+    <nav class="navlinks">
+      <a href="/index.html">Home</a>
+      <a href="/shop.html">Shop</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a class="pill" href="/cart.html">Cart (<span data-cart-count>0</span>)</a>
+      <a href="/orders.html">Orders</a>
+      <a href="/admin.html">Admin</a>
+    </nav>
+    <div class="navright" data-auth-slot></div>
+  </div>
+</header>
+
+<main class="container" style="padding:22px 0 0">
+  <div class="sectionTitle">
+    <h2>About Mercier</h2>
+    <span class="muted">Our story</span>
+  </div>
+
+  <div class="card">
+    <div class="cardBody">
+      <p class="muted">
+        Mercier is a modern clothing label focused on premium everyday essentials: clean silhouettes,
+        heavyweight comfort, and timeless colors. We design pieces that look sharp and wear easy.
+      </p>
+      <div class="kpis">
+        <div class="kpi"><div class="v">Premium Fabrics</div><div class="l">Soft, durable, comfortable</div></div>
+        <div class="kpi"><div class="v">Modern Fit</div><div class="l">Minimal, clean lines</div></div>
+        <div class="kpi"><div class="v">Quality Control</div><div class="l">Consistent sizing and finish</div></div>
+        <div class="kpi"><div class="v">Customer First</div><div class="l">Fast support and returns</div></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container small">© <span id="y"></span> Mercier</div>
+</footer>
+
+<script type="module">
+  import { renderAuthUI, updateCartCount } from "/js/app.js";
+  renderAuthUI(); updateCartCount();
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

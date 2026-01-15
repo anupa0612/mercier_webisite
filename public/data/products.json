@@ -1,0 +1,68 @@
+[
+  {
+    "id": "mrc-hoodie-001",
+    "name": "Mercier Signature Hoodie",
+    "price": 79.00,
+    "category": "Hoodies",
+    "badge": "Best Seller",
+    "colors": ["Black", "Grey", "Cream"],
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "image": "https://images.unsplash.com/photo-1520975869018-4f6d74e6f94c?auto=format&fit=crop&w=1200&q=70",
+    "description": "Heavyweight brushed fleece hoodie with minimal Mercier branding. Built for comfort and daily wear."
+  },
+  {
+    "id": "mrc-tee-001",
+    "name": "Mercier Essential Tee",
+    "price": 29.00,
+    "category": "T-Shirts",
+    "badge": "New",
+    "colors": ["White", "Black", "Navy"],
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "image": "https://images.unsplash.com/photo-1520975693411-6b3b2b1f9c2c?auto=format&fit=crop&w=1200&q=70",
+    "description": "Soft cotton tee with a clean fit. Designed to pair with anything in your wardrobe."
+  },
+  {
+    "id": "mrc-jacket-001",
+    "name": "Mercier City Jacket",
+    "price": 119.00,
+    "category": "Outerwear",
+    "badge": "Limited",
+    "colors": ["Black", "Olive"],
+    "sizes": ["S", "M", "L", "XL"],
+    "image": "https://images.unsplash.com/photo-1520975757980-7dbfd8d1e9bb?auto=format&fit=crop&w=1200&q=70",
+    "description": "Lightweight street jacket with structured collar, clean seams, and comfortable lining."
+  },
+  {
+    "id": "mrc-pants-001",
+    "name": "Mercier Tailored Joggers",
+    "price": 59.00,
+    "category": "Bottoms",
+    "badge": "",
+    "colors": ["Black", "Charcoal"],
+    "sizes": ["S", "M", "L", "XL"],
+    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=70",
+    "description": "Modern tapered joggers with a tailored silhouette and stretch waistband."
+  },
+  {
+    "id": "mrc-cap-001",
+    "name": "Mercier Logo Cap",
+    "price": 24.00,
+    "category": "Accessories",
+    "badge": "",
+    "colors": ["Black", "Beige"],
+    "sizes": ["One Size"],
+    "image": "https://images.unsplash.com/photo-1520975910822-2a5d8bdb17c2?auto=format&fit=crop&w=1200&q=70",
+    "description": "Everyday cap with embroidered Mercier logo and adjustable strap."
+  },
+  {
+    "id": "mrc-sweater-001",
+    "name": "Mercier Knit Sweater",
+    "price": 89.00,
+    "category": "Knitwear",
+    "badge": "Premium",
+    "colors": ["Cream", "Black"],
+    "sizes": ["S", "M", "L", "XL"],
+    "image": "https://images.unsplash.com/photo-1520975792191-8e05bdb2d4d9?auto=format&fit=crop&w=1200&q=70",
+    "description": "Comfort knit sweater with a refined texture. Clean lines and easy layering."
+  }
+]
